@@ -1,5 +1,5 @@
-import express from "express"
-import { productRouter } from "./src/routers/index.js";
+const express = require('express')
+const productRouter = require('./src/routers/product.router.js')
 
 const app = express();
 

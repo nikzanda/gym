@@ -1,3 +1,7 @@
-export const findAll = (req, res) => {
+const findAll = (req, res) => {
   return res.json([])
+}
+
+module.exports = {
+  findAll
 }

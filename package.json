@@ -2,7 +2,6 @@
   "name": "gym",
   "version": "0.0.0",
   "main": "index.js",
-  "type": "module",
   "repository": "git@github.com:nikzanda/gym.git",
   "author": "Nicolò Zandarin <nikzanda@hotmail.it>",
   "license": "MIT",

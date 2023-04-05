@@ -1,10 +1,12 @@
-import mysql from 'mysql2'
-import migration from 'mysql-migrations'
-import path from 'path'
-import { fileURLToPath } from 'url'
+// import mysql from 'mysql2'
+// import migration from 'mysql-migrations'
+// import path from 'path'
+// import { fileURLToPath } from 'url'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename)
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename)
+const mysql = require('mysql2')
+const migration = require('mysql-migrations')
 
 const connection = mysql.createPool({
   connectionLimit: 10,

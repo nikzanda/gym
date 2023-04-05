@@ -8,4 +8,7 @@ CREATE TABLE products (
 
 const down = 'DROP TABLE IF EXISTS products;';
 
-export default { up, down };
+module.exports = {
+    up,
+    down
+}

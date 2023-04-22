@@ -1,6 +1,7 @@
-const migration = require('mysql-migrations')
-const db = require('./db.js')
+const migration = require('mysql-migrations');
+const db = require('./db');
 
 migration.init(db, `${__dirname}/migrations`, () => {
-  console.log('finished running migrations')
-})
+  // eslint-disable-next-line no-console
+  console.log('finished running migrations');
+});

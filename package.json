@@ -6,7 +6,8 @@
   "author": "Nicolò Zandarin <nikzanda@hotmail.it>",
   "license": "MIT",
   "scripts": {
-    "serve": "nodemon index.js"
+    "serve": "nodemon index.js",
+    "lint": "npx eslint --fix ."
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -14,6 +15,10 @@
     "mysql2": "^3.2.0"
   },
   "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
     "nodemon": "^2.0.22"
   }
 }

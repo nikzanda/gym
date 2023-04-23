@@ -11,6 +11,10 @@ dotenv.config({
 
 const PORT = process.env.APP_PORT || 3000;
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.use('/products', productRouter);
 
 app.listen(PORT, () => {

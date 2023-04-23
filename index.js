@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-
 const dotenv = require('dotenv-safe');
 
 const productRouter = require('./src/routers/product.router');

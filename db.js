@@ -1,8 +1,11 @@
 const mysql = require('mysql2');
 const path = require('path');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv-safe');
 
-dotenv.config({ path: path.join(__dirname, `.env.${process.env.NODE_ENV}`) });
+dotenv.config({
+  allowEmptyValues: true,
+  path: path.join(__dirname, `.env.${process.env.NODE_ENV}`),
+});
 
 const connection = mysql.createPool({
   connectionLimit: 10,

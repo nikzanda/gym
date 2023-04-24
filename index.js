@@ -6,7 +6,7 @@ const productRouter = require('./src/routers/product.router');
 
 dotenv.config({
   allowEmptyValues: true,
-  path: path.join(__dirname, `.env.${process.env.NODE_ENV}`),
+  path: path.join(__dirname, `.env.${process.env.NODE_ENV || 'development'}`),
 });
 
 const PORT = process.env.APP_PORT || 3000;

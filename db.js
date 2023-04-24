@@ -4,7 +4,7 @@ const dotenv = require('dotenv-safe');
 
 dotenv.config({
   allowEmptyValues: true,
-  path: path.join(__dirname, `.env.${process.env.NODE_ENV}`),
+  path: path.join(__dirname, `.env.${process.env.NODE_ENV || 'development'}`),
 });
 
 const connection = mysql.createPool({

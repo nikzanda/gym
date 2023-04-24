@@ -17,7 +17,7 @@ const find = (req, res) => {
   const { id } = req.params;
 
   db.query(
-    'SELECT * FROM `products` WHERE `id` = ?',
+    'SELECT * FROM `products` WHERE `id` = ?;',
     [id],
     (err, result) => {
       if (err) {
@@ -41,7 +41,7 @@ const create = (req, res) => {
   const { name, code, price } = req.body;
 
   db.query(
-    'INSERT INTO `products`(name, code, price) VALUES (?, ?, ?);',
+    'INSERT INTO `products`(`name`, `code`, `price`) VALUES (?, ?, ?);',
     [name, code, price],
     (err, result) => {
       if (err) {
@@ -49,7 +49,27 @@ const create = (req, res) => {
         return;
       }
 
-      res.json(result);
+      const { insertId } = result;
+
+      db.query(
+        'SELECT * FROM `products` WHERE `id` = ?;',
+        [insertId],
+        (selectErr, selectResult) => {
+          if (selectErr) {
+            res.status(400).json(selectErr);
+            return;
+          }
+
+          const [record] = selectResult;
+
+          if (!record) {
+            res.sendStatus(404);
+            return;
+          }
+
+          res.json(record);
+        },
+      );
     },
   );
 };

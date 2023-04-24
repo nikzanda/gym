@@ -67,9 +67,26 @@ const create = (req, res) => {
             return;
           }
 
-          res.json(record);
+          res.status(201).json(record);
         },
       );
+    },
+  );
+};
+
+const erase = (req, res) => {
+  const { id } = req.params;
+
+  db.query(
+    'DELETE FROM `products` WHERE `id` = ?',
+    [id],
+    (err) => {
+      if (err) {
+        res.status(400).json(err);
+        return;
+      }
+
+      res.sendStatus(204);
     },
   );
 };
@@ -78,4 +95,5 @@ module.exports = {
   findAll,
   find,
   create,
+  erase,
 };

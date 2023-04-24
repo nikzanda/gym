@@ -9,7 +9,10 @@ POST http://localhost:3000/products
 content-type: application/json
 
 {
-  "name": "Attrezzo 1",
-  "code": "AT-1",
-  "price": 10.5
+  "name": "Attrezzo 2",
+  "code": "AT-2",
+  "price": 15
 }
+
+###
+DELETE http://localhost:3000/products/4
